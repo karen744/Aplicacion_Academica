@@ -32,5 +32,24 @@ class Facultades extends Controller
         return redirect()->route('listadoFac');
     }
  
+
+    public function editar($id)
+    {
+        
+        $facultad=Facultad::findOrFail($id);
+        return view('facultades.edit_facultades',compact('facultad'));
+
+    }
+
+
+    public function actualizar(Request $request, $id)
+    {
+        
+        $datos = request()->except('_token','_method');
+        Facultad::where('codFacultad','=',$id)->update($datos);
+        return redirect()->route('listadoFac');
+
+
+    }
     
 }

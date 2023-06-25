@@ -22,7 +22,7 @@ class Estudiantes extends Controller
     public function registrar(Request $r){
         $estudiante = new Estudiante();
         $estudiante->codEstudiante = $r->input('codigoEstudiante');
-        $estudiante->nomEstudiante = $r->input('nombreEstudiante');
+        $estudiante->nomestudiante = $r->input('nombreEstudiante');
         $estudiante->save();
         return redirect()->route('listadoEst');
     }

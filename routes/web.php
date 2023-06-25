@@ -27,13 +27,10 @@ Route::get('/dashboard', [HomeController::class, 'index']);
 Route::get('/facultades/listado', [Facultades::class, 'index'])->name('listadoFac');
 Route::get('/facultades/registrar', [Facultades::class, 'form_registro']);
 Route::post('/facultades/registrar', [Facultades::class, 'registrar']);
+Route::get('/facultades/{id}/editar',[Facultades::class, 'editar'])->name('editarFac');
 Route::get('/facultades/eliminar/{id}', [Facultades::class, 'eliminar'])->name('eliminaFac');
-
-
-
-
-
-
+Route::patch('/facultades/{id}', [Facultades::class, 'actualizar'])->name('facultades.actualizar');
+#--------------------------------------------------------------------------------------------
 Route::get('/programas/listado', [Programas::class, 'index'])->name('listadoProg');
 Route::get('/programas/registrar',[Programas::class, 'form_registro'])->name('programas.regitrar');
 Route::post('/programas/registrar',[Programas::class, 'registrar']);

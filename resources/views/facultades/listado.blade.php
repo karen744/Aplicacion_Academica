@@ -28,7 +28,7 @@
                 <td> {{ $f->codFacultad}}</td>
                 <td> {{ $f->nomFacultad}}</td>
                 <td>
-                    <a class="btn btn-primary">Editar</a>
+                    <a href="{{ route('editarFac', $f->codFacultad) }}"class="btn btn-outline-info">Editar</a>
                     <a class="btn btn-danger" href="{{route('eliminaFac',$f->codFacultad)}}">Eliminar</a>
                 </td>
             </tr>
